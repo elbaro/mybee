@@ -2,7 +2,9 @@
 name = "xtask"
 version = "0.1.0"
 edition = "2021"
+license = "MIT"
+authors = ["elbaro <elbaro@users.noreply.github.com>"]
 
 [dependencies]
 anyhow = "1"
-clap = { version = "4.1", features = ["derive"] }
+clap = { version = "4.2.4", features = ["derive"] }

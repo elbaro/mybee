@@ -11,7 +11,7 @@ aya = { git = "https://github.com/aya-rs/aya", branch = "main", features = [
     "async_tokio",
 ] }
 aya-log = { git = "https://github.com/aya-rs/aya", branch = "main" }
-clap = { version = "4.1", features = ["derive"] }
+clap = { version = "4.2.4", features = ["derive"] }
 mybee-common = { path = "../mybee-common", features = ["user"] }
 env_logger = "0.10"
 libc = "0.2"

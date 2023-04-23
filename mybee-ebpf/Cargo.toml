@@ -2,6 +2,8 @@
 name = "mybee-ebpf"
 version = "0.1.0"
 edition = "2021"
+license = "MIT"
+authors = ["elbaro <elbaro@users.noreply.github.com>"]
 
 [dependencies]
 aya-bpf = { git = "https://github.com/aya-rs/aya", branch = "main" }

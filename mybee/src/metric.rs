@@ -14,7 +14,10 @@ pub async fn install() -> Result<()> {
         MetricKindMask::ALL,
         Some(Duration::from_secs(10 * 24 * 60 * 60)), // 10 days
     );
-    let handle = builder.install_recorder()?;
+    let (recorder, exporter) = builder.build()?;
+    tokio::spawn(exporter);
+    let handle = recorder.handle();
+    metrics::set_boxed_recorder(Box::new(recorder))?;
 
     register_histogram!(HISTOGRAM_LATENCY);
     describe_histogram!(HISTOGRAM_LATENCY, metrics::Unit::Seconds, "query latency");
