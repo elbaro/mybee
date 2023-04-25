@@ -4,14 +4,16 @@
 
 An eBPF profiler for MySQL 8.0.
 
-mybee directly probes on mysqld, read queries and client information from the mysqld memory.
+mybee directly probes on mysqld, read queries and client information from the mysqld memory.  
+mybee does not read and parse tcp packets, a work already done by mysqld.
 
 [Example](https://github.com/elbaro/mybee/wiki/Demo)
 
 ## Prerequisites
 
-1. Install a rust nightly toolchain with the rust-src component: `rustup toolchain install nightly --component rust-src`
-2. Install bpf-linker: `cargo install bpf-linker`
+1. rust nightly
+2. `rustup toolchain install nightly --component rust-src`
+3. `cargo install bpf-linker`
 
 ## Run
 
