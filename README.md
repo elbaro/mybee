@@ -4,10 +4,10 @@
 
 An eBPF profiler for MySQL 8.0.
 
-mybee directly probes on mysqld, read queries and client information from the mysqld memory.  
+mybee directly probes on the mysqld memory.
 mybee does not read and parse tcp packets, a work already done by mysqld.
 
-[Example](https://github.com/elbaro/mybee/wiki/Demo)
+[Screenshots](https://github.com/elbaro/mybee/wiki/Demo)
 
 ## Prerequisites
 
