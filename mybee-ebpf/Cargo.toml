@@ -6,8 +6,8 @@ license = "MIT"
 authors = ["elbaro <elbaro@users.noreply.github.com>"]
 
 [dependencies]
-aya-bpf = { git = "https://github.com/aya-rs/aya", branch = "main" }
-aya-log-ebpf = { git = "https://github.com/aya-rs/aya", branch = "main" }
+aya-bpf = { git = "https://github.com/aya-rs/aya", rev = "1979da92a722bacd9c984865a4c7108e22fb618f" }
+aya-log-ebpf = { git = "https://github.com/aya-rs/aya", rev = "1979da92a722bacd9c984865a4c7108e22fb618f" }
 mybee-common = { path = "../mybee-common" }
 
 [[bin]]

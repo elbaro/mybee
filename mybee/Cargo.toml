@@ -7,10 +7,10 @@ authors = ["elbaro <elbaro@users.noreply.github.com>"]
 publish = false
 
 [dependencies]
-aya = { git = "https://github.com/aya-rs/aya", branch = "main", features = [
+aya = { git = "https://github.com/aya-rs/aya", rev = "1979da92a722bacd9c984865a4c7108e22fb618f", features = [
     "async_tokio",
 ] }
-aya-log = { git = "https://github.com/aya-rs/aya", branch = "main" }
+aya-log = { git = "https://github.com/aya-rs/aya", rev = "1979da92a722bacd9c984865a4c7108e22fb618f" }
 clap = { version = "4.2.4", features = ["derive"] }
 mybee-common = { path = "../mybee-common", features = ["user"] }
 env_logger = "0.10"
