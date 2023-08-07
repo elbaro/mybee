@@ -15,7 +15,7 @@ use mybee_common::{QueryEnd, QueryStart, MAX_STATEMENT_LEN};
 const COM_QUERY: u32 = 3;
 
 struct ComData {
-    query:  *const c_char,
+    query: *const c_char,
     length: u32,
 }
 
@@ -28,7 +28,7 @@ pub static mut TRACK_MAP: HashMap<u64, u64> = HashMap::with_max_entries(128, 0);
 #[map]
 pub static mut IP_MAP: HashMap<u64, [u8; 16]> = HashMap::with_max_entries(128, 0);
 
-#[uprobe(name = "uprobe_dispatch_command")]
+#[uprobe]
 pub fn uprobe_dispatch_command(ctx: ProbeContext) -> u32 {
     match try_uprobe(ctx) {
         Ok(ret) => ret,
@@ -36,7 +36,7 @@ pub fn uprobe_dispatch_command(ctx: ProbeContext) -> u32 {
     }
 }
 
-#[uretprobe(name = "uretprobe_dispatch_command")]
+#[uretprobe]
 pub fn uretprobe_dispatch_command(ctx: ProbeContext) -> u32 {
     match try_uretprobe(ctx) {
         Ok(ret) => ret,
@@ -44,7 +44,7 @@ pub fn uretprobe_dispatch_command(ctx: ProbeContext) -> u32 {
     }
 }
 
-#[uprobe(name = "uprobe_assign_ip")]
+#[uprobe]
 pub fn uprobe_assign_ip(ctx: ProbeContext) -> u32 {
     fn imp(ctx: ProbeContext) -> Result<u32, u32> {
         let tid = bpf_get_current_pid_tgid();
@@ -68,7 +68,7 @@ pub fn uprobe_assign_ip(ctx: ProbeContext) -> u32 {
     }
 }
 
-#[uprobe(name = "uprobe_end_connection")]
+#[uprobe]
 pub fn uprobe_end_connection(ctx: ProbeContext) -> u32 {
     fn imp(_ctx: ProbeContext) -> Result<u32, u32> {
         let tid = bpf_get_current_pid_tgid();
